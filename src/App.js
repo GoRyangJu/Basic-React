@@ -30,6 +30,10 @@ function App() {
     setData([...data, item]);
   };
 
+  let handleModalOpen = (value) => {
+    setIsModalOpen(value);
+  };
+
   return (
     <>
       <header>
@@ -60,7 +64,7 @@ function App() {
       <Modal
         handleAddItem={handleAddItem}
         isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
+        handleModalOpen={handleModalOpen}
       />
     </>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Modal({ handleAddItem, isModalOpen, setIsModalOpen }) {
+function Modal({ handleAddItem, isModalOpen, handleModalOpen }) {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
@@ -8,13 +8,13 @@ function Modal({ handleAddItem, isModalOpen, setIsModalOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddItem({ name, content, image });
-    setIsModalOpen(false);
+    handleModalOpen(false);
   };
 
   return (
     <div className="modal-background" hidden={!isModalOpen}>
       <form className="modal" onSubmit={handleSubmit}>
-        <span className="modal-close" onClick={() => setIsModalOpen(false)}>
+        <span className="modal-close" onClick={() => handleModalOpen(false)}>
           X
         </span>
         <label htmlFor="name" className="label">
